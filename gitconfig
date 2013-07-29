@@ -1,0 +1,27 @@
+[user]
+	name = Ryan Moon
+	email = ryan.moon@gmail.com
+[color]
+	ui = auto
+[core]
+	autocrlf = input
+	safecrlf = true
+	editor = subl -w
+[credential]
+	helper = cache --timeout=4500
+[mergetool]
+	keepBackup = true
+	prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[merge]
+	tool = Kaleidoscope
+[push]
+	default = simple
