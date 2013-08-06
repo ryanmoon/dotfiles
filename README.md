@@ -6,5 +6,7 @@
 
 Just my bash_profile, bashrc and gitconfig.
 
+Be sure to run `cd ~/dotfiles/ && rake install`
+
 
 

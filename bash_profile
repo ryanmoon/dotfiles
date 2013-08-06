@@ -12,7 +12,7 @@ fi
 
 FIGNORE=".o:~:Application Scripts"
 alias fcs="telnet 192.168.37.211"
-alias log="~/bin/logtodayone.rb"
+alias log="usr/local/bin/logtodayone.rb"
 
 # Add current folder to ~/.gitlogger with name specified as argument 1
 # For use with gitlogger.sh
