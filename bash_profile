@@ -1,9 +1,8 @@
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]🍕  \T \[$(tput setaf 4)\]\! \[$(tput setaf 6)\]\j \[$(tput sgr0)\] \w  👾  > "
-# MacPorts Installer addition on 2011-11-29_at_18:04:42: adding an appropriate PATH variable for use with MacPorts.
+
 export PATH=~/.rvm/bin:~/.rvm:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/munki:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:$PATH
-#export EDITOR="usr/local/bin/mate -w"
 export EDITOR='subl -w'
-# Finished adapting your PATH environment variable for use with MacPorts.
+
 
 # bash-completion
 if [ -f /opt/local/etc/bash_completion ]; then
