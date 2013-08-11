@@ -1,4 +1,4 @@
-export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]🍕  \T \[$(tput setaf 4)\]\! \[$(tput setaf 6)\]\j \[$(tput sgr0)\] \w  👾  > "
+export PS1="\[$(tput bold)\]\[$(tput setaf 7)\]🍕  \T \[$(tput setaf 9)\]\! \[$(tput setaf 3)\]\j \[$(tput sgr0)\] \w   \n👾  = "
 
 export PATH=~/.rvm/bin:~/.rvm:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/munki:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:$PATH
 export EDITOR='subl -w'
@@ -24,5 +24,5 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
 export HISTIGNORE="&:[ ]*:clear"
-
+export PROMPT_COMMAND='history -a'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
