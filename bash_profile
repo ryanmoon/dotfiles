@@ -1,4 +1,4 @@
-export PS1="\[$(tput bold)\]\[$(tput setaf 7)\]🍕  \T \[$(tput setaf 9)\]\! \[$(tput setaf 3)\]\j \[$(tput sgr0)\] \w   \n👾  = "
+export PS1="\[$(tput bold)\]\[$(tput setaf 7)\]🍕  \T \[$(tput setaf 9)\]\! \[$(tput setaf 3)\]\[$(tput sgr0)\] \w  \n👾   "
 
 export PATH=~/.rvm/bin:~/.rvm:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/munki:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:$PATH
 export EDITOR='subl -w'
