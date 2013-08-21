@@ -5,9 +5,10 @@ export EDITOR='subl -w'
 
 
 # bash-completion
-if [ -f /opt/local/etc/bash_completion ]; then
-    . /opt/local/etc/bash_completion
-fi
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
+  
 
 FIGNORE=".o:~:Application Scripts"
 alias fcs="telnet 192.168.37.211"

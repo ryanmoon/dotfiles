@@ -21,7 +21,7 @@
 	safecrlf = true
 	editor = subl -w
 [credential]
-	helper = cache --timeout=4500
+	helper = osxkeychain
 [mergetool]
 	keepBackup = true
 	prompt = false
