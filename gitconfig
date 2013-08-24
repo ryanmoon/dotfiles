@@ -40,3 +40,7 @@
 	default = simple
 [branch]
 	autosetupmerge = true
+[help]
+	autocorrect = 1
+[rerere]
+	enabled = 1
