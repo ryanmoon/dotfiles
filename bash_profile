@@ -1,6 +1,6 @@
 export PS1="\[$(tput bold)\]\[$(tput setaf 7)\]🍕  \T \[$(tput setaf 9)\]\! \[$(tput setaf 3)\]\[$(tput sgr0)\] \w  \n👾   "
 
-export PATH=~/usr/local/bin:/usr/local/sbin:/usr/local/munki:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/munki:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:$PATH
 export EDITOR='subl -w'
 
 
@@ -11,8 +11,8 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   
 
 FIGNORE=".o:~:Application Scripts"
-alias fcs="telnet 192.168.37.211"
 alias log="usr/local/bin/logtodayone.rb"
+alias git=hub
 
 # Add current folder to ~/.gitlogger with name specified as argument 1
 # For use with gitlogger.sh
