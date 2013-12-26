@@ -1,4 +1,4 @@
-export PS1="\[$(tput bold)\]\[$(tput setaf 7)\]🍕  \T \[$(tput setaf 9)\]\! $(tput setaf 3)\]\$(batterycharge) \[$(tput setaf 5)\] PWD:\w \[$(tput sgr0)\] BRANCH:$(__git_ps1 " (%s)") \n👾   "
+export PS1="\[$(tput bold)\]\[$(tput setaf 7)\]🍕  \T \[$(tput setaf 9)\]\! $(tput setaf 3)\]\$(batterycharge) \[$(tput setaf 5)\] PWD:\w \[$(tput sgr0)\] \n👾   "
 
 export PATH=/Users/moonr/bin:/Users/moonr/.rbenv/versions/1.9.3-p448/bin:/usr/local/bin:/usr/local/sbin:/usr/local/munki:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:$PATH
 export EDITOR="/Users/moonr/bin/editor.sh"
@@ -30,7 +30,7 @@ export PROMPT_COMMAND='history -a'
 eval "$(rbenv init -)"
 
 # For Git Branch in prompt
-source ~/bin/git_prompt.sh
+# source ~/bin/git_prompt.sh - worked once, then poof
 
 # For Battery Status in prompt
 function batterycharge {
