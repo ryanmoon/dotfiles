@@ -83,7 +83,7 @@ function odkiller {
 }
 # FOR BATTERY STATUS IN PROMPT
 function batterycharge {
-    /Users/moonr/bin/batterycharge.sh
+    "$HOME/bin/batterycharge.sh"
 }
 # ADD HORIZONTAL LINE
 rule() {
@@ -147,7 +147,7 @@ copy() {
 }
 # TO FIX HOMEBREW
 function brewfix {
-    $HOME/bin/brew_fix.sh
+    "$HOME/bin/brew_fix.sh"
 }
 
 # OPEN ARGUMENT IN DASH
@@ -170,12 +170,12 @@ function parse_git_branch() {
 
 # IP ADDRESS WALRUS
 function walrus {
-    sudo $HOME/bin/ip_walrus.sh
+    sudo "$HOME/bin/ip_walrus.sh"
 }
 
 # DISPLAY WIRELESS NETWORK IN BASH PROMPT
 function airprompt() {
-    $HOME/bin/airprompt.sh
+    "$HOME/bin/airprompt.sh"
 }
 
 # ADD CURRENT FOLDER TO ~/.GITLOGGER WITH NAME SPECIFIED AS ARGUMENT 1
@@ -266,7 +266,7 @@ alias vuvf='vagrant up --provider vmware_fusion'
 # ----------------------------------------------------------------------------------------------
 # Z
 # ----------------------------------------------------------------------------------------------
-. $HOME/bin/z.sh
+. "$HOME/bin/z.sh"
 
 # ----------------------------------------------------------------------------------------------
 # BASH COMPLETION FOR GOOGLE CLOUD
@@ -282,9 +282,9 @@ export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 # GOOGLE CLOUD SDK
 # ----------------------------------------------------------------------------------------------
 # The next line updates PATH for the Google Cloud SDK.
-source '$HOME/google-cloud-sdk/path.bash.inc'
+source "$HOME/google-cloud-sdk/path.bash.inc"
 # The next line enables bash completion for gcloud.
-source '$HOME/google-cloud-sdk/completion.bash.inc'
+source "$HOME/google-cloud-sdk/completion.bash.inc"
 
 # ----------------------------------------------------------------------------------------------
 # BREW CASK
@@ -306,4 +306,4 @@ source ~/.xsh
 # ----------------------------------------------------------------------------------------------
 # CHEF CONFIGURATION
 # ----------------------------------------------------------------------------------------------
-source $HOME/.moon-identities
+source "$HOME/.moon-identities"
