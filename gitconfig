@@ -1,8 +1,8 @@
 [user]
-	name = Ryan Moon
-	email = ryan.moon@gmail.com
+    name = Ryan Moon
+    email = ryan.moon@gmail.com
 [color]
-	ui = auto
+    ui = auto
 [color "branch"]
       current = yellow reverse
       local = yellow
@@ -17,30 +17,44 @@
       changed = green
       untracked = cyan
 [core]
-	autocrlf = input
-	safecrlf = true
-	editor = subl -w
+    autocrlf = input
+    safecrlf = true
+    editor = subl -w
+    excludesfile = $HOME/.gitignore
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [mergetool]
-	keepBackup = true
-	prompt = false
+    keepBackup = true
+    prompt = false
 [difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]
-	tool = Kaleidoscope
+    tool = Kaleidoscope
 [difftool]
-	prompt = false
+    prompt = false
 [mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+    trustExitCode = true
 [merge]
-	tool = Kaleidoscope
+    tool = Kaleidoscope
 [push]
-	default = simple
+    default = simple
 [branch]
-	autosetupmerge = true
+    autosetupmerge = true
 [help]
-	autocorrect = 1
+    autocorrect = 1
 [rerere]
-	enabled = 1
+    enabled = 1
+[filter "media"]
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
+[init]
+    templatedir = ~/.git-templates
+[github]
+    user = ryanmoon
+[ghi]
+    token = !security find-internet-password -a ryanmoon -s github.com -l 'ghi token' -w
+[filter "lfs"]
+    clean = git lfs clean %f
+    smudge = git lfs smudge %f
+    required = true
