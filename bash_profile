@@ -269,11 +269,6 @@ alias vuvf='vagrant up --provider vmware_fusion'
 . "$HOME/bin/z.sh"
 
 # ----------------------------------------------------------------------------------------------
-# BASH COMPLETION FOR GOOGLE CLOUD
-# ----------------------------------------------------------------------------------------------
-source /usr/local/google-cloud-sdk/completion.bash.inc
-
-# ----------------------------------------------------------------------------------------------
 # VAGRANT DEFAULT PROVIDER
 # ----------------------------------------------------------------------------------------------
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
@@ -281,10 +276,8 @@ export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 # ----------------------------------------------------------------------------------------------
 # GOOGLE CLOUD SDK
 # ----------------------------------------------------------------------------------------------
-# The next line updates PATH for the Google Cloud SDK.
-source "$HOME/google-cloud-sdk/path.bash.inc"
-# The next line enables bash completion for gcloud.
-source "$HOME/google-cloud-sdk/completion.bash.inc"
+source '/usr/local/bin/google-cloud-sdk/path.bash.inc'
+source '/usr/local/bin/google-cloud-sdk/completion.bash.inc'
 
 # ----------------------------------------------------------------------------------------------
 # BREW CASK
@@ -294,7 +287,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # ----------------------------------------------------------------------------------------------
 # XIKI
 # ----------------------------------------------------------------------------------------------
-
 source ~/.xsh
 
 # ----------------------------------------------------------------------------------------------
@@ -307,3 +299,5 @@ source ~/.xsh
 # CHEF CONFIGURATION
 # ----------------------------------------------------------------------------------------------
 source "$HOME/.moon-identities"
+
+
