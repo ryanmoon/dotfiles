@@ -42,6 +42,9 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 ## TO IGNORE ~/LIBRARY/APPLICATION\ SCRIPTS/ WHEN USING BASH COMPLETION
 FIGNORE=".o:~:Application Scripts"
 
+# TMUXINATOR BASH COMPLETION
+source ~/   bin/tmuxinator.bash
+
 # ----------------------------------------------------------------------------------------------
 # BASH HISTORY SETTINGS
 # ----------------------------------------------------------------------------------------------
