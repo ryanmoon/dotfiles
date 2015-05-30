@@ -1,5 +1,21 @@
 # Change Log
 
+## [Unreleased](https://github.com/ryanmoon/dotfiles/tree/HEAD)
+
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.2...HEAD)
+
+**Fixed bugs:**
+
+- Problem with sourcing some files in bash profile [\#3](https://github.com/ryanmoon/dotfiles/issues/3)
+
+**Merged pull requests:**
+
+- dotfiles    ryanmoon/issue \#3 [\#4](https://github.com/ryanmoon/dotfiles/pull/4) ([moonr](https://github.com/moonr))
+
+## [v0.5.2](https://github.com/ryanmoon/dotfiles/tree/v0.5.2) (2015-05-30)
+
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.1...v0.5.2)
+
 ## [v0.5.1](https://github.com/ryanmoon/dotfiles/tree/v0.5.1) (2015-05-30)
 
 [Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.0...v0.5.1)
