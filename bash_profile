@@ -43,7 +43,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 FIGNORE=".o:~:Application Scripts"
 
 # TMUXINATOR BASH COMPLETION
-source ~/   bin/tmuxinator.bash
+source ~/bin/tmuxinator.bash
 
 # ----------------------------------------------------------------------------------------------
 # BASH HISTORY SETTINGS
