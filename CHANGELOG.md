@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.5.1](https://github.com/ryanmoon/dotfiles/tree/v0.5.1) (2015-05-30)
+
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.0...v0.5.1)
+
+**Implemented enhancements:**
+
+- Add tmuxinator completion [\#1](https://github.com/ryanmoon/dotfiles/issues/1)
+
+**Merged pull requests:**
+
+- dotfiles ryanmoon/issue \#1 [\#2](https://github.com/ryanmoon/dotfiles/pull/2) ([moonr](https://github.com/moonr))
+
 ## [v0.5.0](https://github.com/ryanmoon/dotfiles/tree/v0.5.0) (2015-05-25)
 
 
