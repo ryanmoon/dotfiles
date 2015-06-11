@@ -249,6 +249,7 @@ ltree()
 #=========#
 
 alias b='bundle exec' # Save time for executing bundle exec
+alias ber='rm -rf Berksfile.lock && berks install && berks upload' # For use with Berkshelf
 alias cd='cd ' # cd with the ability to use alias shortcuts
 alias tdlist='/Users/moonr/Documents/GitHub-Ryan/cliist/cliist.py' # Alias for cliist
 alias ct='pygmentize -O style=monokai -f console256 -g' # Pretty cat, requires sudo easy_install Pygments
@@ -259,6 +260,7 @@ alias fuck='$(thefuck $(fc -ln -1))'
 alias FUCK='fuck'
 alias gaa='git add --all' # Git Add All
 alias gc='git commit -asv' # Git Commit
+alias gcm='git checkout master' # Git Checkout Master
 alias gl='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
 alias gpb='git push --set-upstream origin $(parse_git_branch | cut -c 4-)'
 alias gs='git status' # Git Status

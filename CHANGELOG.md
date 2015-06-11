@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.5.5](https://github.com/ryanmoon/dotfiles/tree/v0.5.5) (2015-06-11)
+
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.4...v0.5.5)
+
+**Implemented enhancements:**
+
+- Add some aliases [\#10](https://github.com/ryanmoon/dotfiles/issues/10)
+
+**Merged pull requests:**
+
+- dotfiles  ryanmoon/issue \#10 [\#11](https://github.com/ryanmoon/dotfiles/pull/11) ([ryanmoon](https://github.com/ryanmoon))
+
 ## [v0.5.4](https://github.com/ryanmoon/dotfiles/tree/v0.5.4) (2015-06-02)
 
 [Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.3...v0.5.4)
