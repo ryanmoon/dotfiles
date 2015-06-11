@@ -1,16 +1,22 @@
 # Change Log
 
-## [Unreleased](https://github.com/ryanmoon/dotfiles/tree/HEAD)
+## [v0.5.4](https://github.com/ryanmoon/dotfiles/tree/v0.5.4) (2015-06-02)
 
-[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.3...HEAD)
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.3...v0.5.4)
 
 **Implemented enhancements:**
 
+- Clean up titles [\#8](https://github.com/ryanmoon/dotfiles/issues/8)
+
 - Add poet bash completion [\#7](https://github.com/ryanmoon/dotfiles/issues/7)
+
+**Merged pull requests:**
+
+- Fix for issue \#8 [\#9](https://github.com/ryanmoon/dotfiles/pull/9) ([ryanmoon](https://github.com/ryanmoon))
 
 ## [v0.5.3](https://github.com/ryanmoon/dotfiles/tree/v0.5.3) (2015-05-30)
 
-[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.1...v0.5.3)
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.2...v0.5.3)
 
 **Fixed bugs:**
 
@@ -24,13 +30,13 @@
 
 - dotfiles    ryanmoon/issue \#3 [\#4](https://github.com/ryanmoon/dotfiles/pull/4) ([moonr](https://github.com/moonr))
 
-## [v0.5.1](https://github.com/ryanmoon/dotfiles/tree/v0.5.1) (2015-05-30)
-
-[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.2...v0.5.1)
-
 ## [v0.5.2](https://github.com/ryanmoon/dotfiles/tree/v0.5.2) (2015-05-30)
 
-[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.0...v0.5.2)
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.1...v0.5.2)
+
+## [v0.5.1](https://github.com/ryanmoon/dotfiles/tree/v0.5.1) (2015-05-30)
+
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.0...v0.5.1)
 
 **Implemented enhancements:**
 

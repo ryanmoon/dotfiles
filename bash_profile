@@ -248,7 +248,9 @@ ltree()
 # ALIASES #
 #=========#
 
+alias b='bundle exec' # Save time for executing bundle exec
 alias cd='cd ' # cd with the ability to use alias shortcuts
+alias tdlist='/Users/moonr/Documents/GitHub-Ryan/cliist/cliist.py' # Alias for cliist
 alias ct='pygmentize -O style=monokai -f console256 -g' # Pretty cat, requires sudo easy_install Pygments
 alias dlog="usr/local/bin/logtodayone.rb" # Log to Day One
 alias dsd='find . -name '*.DS_Store' -type f -delete'
