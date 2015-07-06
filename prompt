@@ -1,0 +1,14 @@
+#=======================#
+# RYAN MOON BASH_PROMPT #
+#=======================#
+
+#========#
+# PROMPT #
+#========#
+
+if [ -z "$TMUX" ]; then
+export PS1="🍕  \[\e[33;1m\]\T 📓 \[\e[31;1m\]\! \[\e[30;1m\]\$(airprompt) \[\e[32;1m\]\$(batterycharge) 📍 \[\e[35;1m\]\W  \[\e[37;1m\]\$(parse_git_branch) \n👾 \[\e[0m\] "
+fi
+if [ -n "$TMUX" ]; then
+export PS1="🍕  \[\e[33;1m\]\T  📓  \[\e[31;1m\]\!📍  \[\e[35;1m\]\W \[\e[37;1m\]\$(parse_git_branch) \n👾  \[\e[0m\] "
+fi
