@@ -9,7 +9,7 @@ alias cd='cd ' # cd with the ability to use alias shortcuts
 alias ct='pygmentize -O style=monokai -f console256 -g' # Pretty cat, requires sudo easy_install Pygments
 alias dl="cd ~/Downloads"
 alias dlog="usr/local/bin/logtodayone.rb" # Log to Day One
-alias dr="cd ~/Documents/Dropbox"
+alias dr="cd ~/Dropbox"
 alias dsd='find . -name '*.DS_Store' -type f -delete'
 alias dt="cd ~/Desktop"
 alias ebp='subl $HOME/.bash_profile'
