@@ -1,5 +1,23 @@
 # Change Log
 
+## [v0.5.6](https://github.com/ryanmoon/dotfiles/tree/v0.5.6) (2015-07-06)
+
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.5...v0.5.6)
+
+**Implemented enhancements:**
+
+- Add more functions [\#15](https://github.com/ryanmoon/dotfiles/issues/15)
+
+- Make bash profile much more lean [\#14](https://github.com/ryanmoon/dotfiles/issues/14)
+
+- Add berkshelf alias [\#12](https://github.com/ryanmoon/dotfiles/issues/12)
+
+**Merged pull requests:**
+
+- dotfiles ryanmoon/issue \#15 [\#16](https://github.com/ryanmoon/dotfiles/pull/16) ([ryanmoon](https://github.com/ryanmoon))
+
+- dotfiles  ryanmoon/issue \#12 [\#13](https://github.com/ryanmoon/dotfiles/pull/13) ([ryanmoon](https://github.com/ryanmoon))
+
 ## [v0.5.5](https://github.com/ryanmoon/dotfiles/tree/v0.5.5) (2015-06-11)
 
 [Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.4...v0.5.5)
