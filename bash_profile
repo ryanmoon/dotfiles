@@ -2,7 +2,7 @@
 # RYAN MOON BASH_PROFILE #
 #========================#
 
-for file in ~/.{prompt,aliases,functions,moon_identities}; do
+for file in ~/.{prompt,aliases,functions,moon-identities}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -49,7 +49,16 @@ source ~/bin/tmuxinator.bash
 # BASH HISTORY SETTINGS #
 #=======================#
 
-export HISTTIMEFORMAT='%F %T '
+export HISTFILE=~/.history/$(date +Y%m%d).hist
+if [[ ! -e $HISTFILE ]]; then
+    LASTHIST=~/.history/$(ls -tr ~/.history/ | tail -1)
+    if [[ -e $LASTHIST ]]; then
+        tail -50 $LASTHIST > $HISTFILE
+        # Write a divider to identify where the prior day's session history ends
+        echo "##########################################################" >> $HISTFILE
+    fi
+fi
+export HISTTIMEFORMAT='%F-%T%t'
 export HISTCONTROL=ignoredups:erasedups
 export HISTFILESIZE=10000        # increase history file size (default is 500)
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
@@ -70,6 +79,11 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh \C-j"'; fi
 #====================================#
 
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
+
+#=========#
+# GLOBALS #
+#=========#
+set +o noglob
 
 #===========#
 # FUNCTIONS #

@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.5.7](https://github.com/ryanmoon/dotfiles/tree/v0.5.7) (2015-07-07)
+
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.6...v0.5.7)
+
+**Fixed bugs:**
+
+- There's a typo in the Dropbox alias [\#17](https://github.com/ryanmoon/dotfiles/issues/17)
+
+**Merged pull requests:**
+
+- dotfiles  ryanmoon/issue \#17 [\#18](https://github.com/ryanmoon/dotfiles/pull/18) ([moonr](https://github.com/moonr))
+
 ## [v0.5.6](https://github.com/ryanmoon/dotfiles/tree/v0.5.6) (2015-07-06)
 
 [Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.5...v0.5.6)

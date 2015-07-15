@@ -1,4 +1,37 @@
-# PUSHOVER
+# MKDIR AND CD INTO NEW DIR
+mkcd(){
+  mkdir -p "$@" && cd "$_";
+}
+
+# CREATE A .TAR.GZ ARCHIVE, USING `ZOPFLI`, `PIGZ` OR `GZIP` FOR COMPRESSION
+function targz() {
+  local tmpFile="${@%/}.tar";
+  tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
+
+  size=$(
+    stat -f"%z" "${tmpFile}" 2> /dev/null; # OS X `stat`
+    stat -c"%s" "${tmpFile}" 2> /dev/null # GNU `stat`
+  );
+
+  local cmd="";
+  if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
+    # the .tar file is smaller than 50 MB and Zopfli is available; use it
+    cmd="zopfli";
+  else
+    if hash pigz 2> /dev/null; then
+      cmd="pigz";
+    else
+      cmd="gzip";
+    fi;
+  fi;
+
+  echo "Compressing .tar using \`${cmd}\`…";
+  "${cmd}" -v "${tmpFile}" || return 1;
+  [ -f "${tmpFile}" ] && rm "${tmpFile}";
+  echo "${tmpFile}.gz created successfully.";
+}
+
+# PUSHOVER, USAGE IS push "message"
 function push() {
     curl -s -F "token=$PUSHOVERTOKEN" \
     -F "user=$PUSHOVERUSER" \
@@ -73,6 +106,7 @@ copy() {
     $res && echo -ne "$output" | pbcopy -Prefer txt
     echo -e "$msg"
 }
+
 # TO FIX HOMEBREW
 function brewfix() {
     "$HOME/bin/brew_fix.sh"
@@ -118,8 +152,8 @@ ltree()
     tree -C $* | less -R
 }
 
-# `s` with no arguments opens the current directory in Sublime Text, otherwise
-# opens the given location
+# `s` WITH NO ARGUMENTS OPENS THE CURRENT DIRECTORY IN SUBLIME TEXT, OTHERWISE
+# OPENS THE GIVEN LOCATION
 function s() {
   if [ $# -eq 0 ]; then
     subl .;
@@ -128,8 +162,8 @@ function s() {
   fi;
 }
 
-# `a` with no arguments opens the current directory in Atom Editor, otherwise
-# opens the given location
+# `a` WITH NO ARGUMENTS OPENS THE CURRENT DIRECTORY IN ATOM EDITOR, OTHERWISE
+# OPENS THE GIVEN LOCATION
 function a() {
   if [ $# -eq 0 ]; then
     atom .;
@@ -138,8 +172,8 @@ function a() {
   fi;
 }
 
-# `v` with no arguments opens the current directory in Vim, otherwise opens the
-# given location
+# `v` WITH NO ARGUMENTS OPENS THE CURRENT DIRECTORY IN VIM, OTHERWISE OPENS THE
+# GIVEN LOCATION
 function v() {
   if [ $# -eq 0 ]; then
     vim .;
@@ -148,8 +182,8 @@ function v() {
   fi;
 }
 
-# `o` with no arguments opens the current directory, otherwise opens the given
-# location
+# `o` WITH NO ARGUMENTS OPENS THE CURRENT DIRECTORY, OTHERWISE OPENS THE GIVEN
+# LOCATION
 function o() {
   if [ $# -eq 0 ]; then
     open .;
@@ -158,54 +192,3 @@ function o() {
   fi;
 }
 
-# Create a git.io short URL
-function gitio() {
-  if [ -z "${1}" -o -z "${2}" ]; then
-    echo "Usage: \`gitio slug url\`";
-    return 1;
-  fi;
-  curl -i http://git.io/ -F "url=${2}" -F "code=${1}";
-}
-
-# NOT SURE WHAT THESE WERE FOR
-# function cdo(){
-#   msg=$*
-#   GIT_DIR=$(git rev-parse --git-dir)
-#   if ! (( $? )); then
-#       GIT_DIR=$(echo "$GIT_DIR" | awk -F/ '{nlast = NF -1;print $nlast}')
-#       if [ -z "$GIT_DIR" ]; then
-#                 path=$(pwd)
-#                 GIT_DIR=${path##*/}
-#       fi
-#             $HOME/bin/logtodayone.rb "@$GIT_DIR $msg"
-#   fi
-
-#   git commit -am "$msg"
-# }
-
-# git() {
-#   cmd=$1
-#   shift
-#   extra=""
-
-#   quoted_args=""
-#   whitespace="[[:space:]]"
-#   for i in "$@"
-#   do
-#       quoted_args="$quoted_args \"$i\""
-#   done
-
-#   cmdToRun="`which git` "$cmd" $quoted_args"
-#   cmdToRun=`echo $cmdToRun | sed -e 's/^ *//' -e 's/ *$//'`
-#   bash -c "$cmdToRun"
-#   if [ $? -eq 0 ]; then
-#     # Commit stats
-#     if [ "$cmd" == "commit" ]; then
-#       commit_hash=`git rev-parse HEAD`
-#       repo_url=`git config --get remote.origin.url`
-#       commit_date=`git log -1 --format=%cd`
-#       commit_data="\"{ \"date\": \"$commit_date\", \"url\": \"$repo_url\", \"hash\": \"$commit_hash\" }\""
-#       git-stats --record "$commit_data"
-#     fi
-#   fi
-# }
