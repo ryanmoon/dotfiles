@@ -1,0 +1,55 @@
+#============#
+# NAVIGATION #
+#============#
+
+alias -- -="cd -"
+alias .....="cd ../../../.."
+alias ....="cd ../../.."
+alias ...="cd ../.."
+alias ..="cd .."
+alias cd='cd ' # cd with the ability to use alias shortcuts
+alias dk="cd ~/Desktop"
+alias dl="cd ~/Downloads"
+alias dr="cd ~/Dropbox"
+alias ~="cd ~" # `cd` is probably faster to type though
+
+#==========#
+# COMMANDS #
+#==========#
+
+alias b='bundle exec' # Save time for executing bundle exec
+alias ber='rm -rf Berksfile.lock && berks install && berks upload' # For use with Berkshelf
+alias ct='pygmentize -O style=monokai -f console256 -g' # Pretty cat, requires sudo easy_install Pygments
+alias dlog="usr/local/bin/logtodayone.rb" # Log to Day One
+alias dsd='find . -name '*.DS_Store' -type f -delete'
+alias ebp='subl $HOME/.bash_profile'
+alias fuck='$(thefuck $(fc -ln -1))'
+alias FUCK='fuck'
+alias hgrep='history | grep '"${1}"'' # Search History
+alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend' # Lock the screen
+alias log='$HOME/bin/logtodayone.rb'
+alias ls='ls -lahG' # How I prefer ls
+alias png='ping -c 5' # Ping 5 times
+alias sbp='source $HOME/.bash_profile' # Source the bash profile
+alias tdlist='/Users/moonr/Documents/GitHub-Ryan/cliist/cliist.py' # Alias for cliist
+alias vdf+='vagrant destroy -f && vagrant up'
+alias vdf='vagrant destroy -f'
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+alias vpro='vagrant provision'
+alias vs='vagrant status'
+alias vuvb='vagrant up --provider virtualbox'
+alias vuvf='vagrant up --provider vmware_fusion'
+
+#=====#
+# GIT #
+#=====#
+
+alias g="git"
+alias gaa='git add --all' # Git Add All
+alias gc='git commit -asv' # Git Commit
+alias gcm='git checkout master' # Git Checkout Master
+alias gl='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+alias gpb='git push --set-upstream origin $(parse_git_branch | cut -c 4-)'
+alias gs='git status' # Git Status
+alias gt='cd $(git rev-parse --show-toplevel 2>/dev/null || (echo "."; echo "Not within a git repository" >&2))' # Get to the top level of a git repo
+

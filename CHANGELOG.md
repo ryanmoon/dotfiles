@@ -1,14 +1,74 @@
 # Change Log
 
-## [Unreleased](https://github.com/ryanmoon/dotfiles/tree/HEAD)
+## [v0.5.7](https://github.com/ryanmoon/dotfiles/tree/v0.5.7) (2015-07-07)
 
-[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.2...HEAD)
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.6...v0.5.7)
 
 **Fixed bugs:**
+
+- There's a typo in the Dropbox alias [\#17](https://github.com/ryanmoon/dotfiles/issues/17)
+
+**Merged pull requests:**
+
+- dotfiles  ryanmoon/issue \#17 [\#18](https://github.com/ryanmoon/dotfiles/pull/18) ([moonr](https://github.com/moonr))
+
+## [v0.5.6](https://github.com/ryanmoon/dotfiles/tree/v0.5.6) (2015-07-06)
+
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.5...v0.5.6)
+
+**Implemented enhancements:**
+
+- Add more functions [\#15](https://github.com/ryanmoon/dotfiles/issues/15)
+
+- Make bash profile much more lean [\#14](https://github.com/ryanmoon/dotfiles/issues/14)
+
+- Add berkshelf alias [\#12](https://github.com/ryanmoon/dotfiles/issues/12)
+
+**Merged pull requests:**
+
+- dotfiles ryanmoon/issue \#15 [\#16](https://github.com/ryanmoon/dotfiles/pull/16) ([ryanmoon](https://github.com/ryanmoon))
+
+- dotfiles  ryanmoon/issue \#12 [\#13](https://github.com/ryanmoon/dotfiles/pull/13) ([ryanmoon](https://github.com/ryanmoon))
+
+## [v0.5.5](https://github.com/ryanmoon/dotfiles/tree/v0.5.5) (2015-06-11)
+
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.4...v0.5.5)
+
+**Implemented enhancements:**
+
+- Add some aliases [\#10](https://github.com/ryanmoon/dotfiles/issues/10)
+
+**Merged pull requests:**
+
+- dotfiles  ryanmoon/issue \#10 [\#11](https://github.com/ryanmoon/dotfiles/pull/11) ([ryanmoon](https://github.com/ryanmoon))
+
+## [v0.5.4](https://github.com/ryanmoon/dotfiles/tree/v0.5.4) (2015-06-02)
+
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.3...v0.5.4)
+
+**Implemented enhancements:**
+
+- Clean up titles [\#8](https://github.com/ryanmoon/dotfiles/issues/8)
+
+- Add poet bash completion [\#7](https://github.com/ryanmoon/dotfiles/issues/7)
+
+**Merged pull requests:**
+
+- Fix for issue \#8 [\#9](https://github.com/ryanmoon/dotfiles/pull/9) ([ryanmoon](https://github.com/ryanmoon))
+
+## [v0.5.3](https://github.com/ryanmoon/dotfiles/tree/v0.5.3) (2015-05-30)
+
+[Full Changelog](https://github.com/ryanmoon/dotfiles/compare/v0.5.2...v0.5.3)
+
+**Fixed bugs:**
+
+- Fix stupidity on my part re: my email address in my gitconfig [\#5](https://github.com/ryanmoon/dotfiles/issues/5)
 
 - Problem with sourcing some files in bash profile [\#3](https://github.com/ryanmoon/dotfiles/issues/3)
 
 **Merged pull requests:**
+
+- Ryanmoon/issue 5 [\#6](https://github.com/ryanmoon/dotfiles/pull/6) ([moonr](https://github.com/moonr))
 
 - dotfiles    ryanmoon/issue \#3 [\#4](https://github.com/ryanmoon/dotfiles/pull/4) ([moonr](https://github.com/moonr))
 

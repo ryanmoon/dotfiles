@@ -1,0 +1,194 @@
+# MKDIR AND CD INTO NEW DIR
+mkcd(){
+  mkdir -p "$@" && cd "$_";
+}
+
+# CREATE A .TAR.GZ ARCHIVE, USING `ZOPFLI`, `PIGZ` OR `GZIP` FOR COMPRESSION
+function targz() {
+  local tmpFile="${@%/}.tar";
+  tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
+
+  size=$(
+    stat -f"%z" "${tmpFile}" 2> /dev/null; # OS X `stat`
+    stat -c"%s" "${tmpFile}" 2> /dev/null # GNU `stat`
+  );
+
+  local cmd="";
+  if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
+    # the .tar file is smaller than 50 MB and Zopfli is available; use it
+    cmd="zopfli";
+  else
+    if hash pigz 2> /dev/null; then
+      cmd="pigz";
+    else
+      cmd="gzip";
+    fi;
+  fi;
+
+  echo "Compressing .tar using \`${cmd}\`…";
+  "${cmd}" -v "${tmpFile}" || return 1;
+  [ -f "${tmpFile}" ] && rm "${tmpFile}";
+  echo "${tmpFile}.gz created successfully.";
+}
+
+# PUSHOVER, USAGE IS push "message"
+function push() {
+    curl -s -F "token=$PUSHOVERTOKEN" \
+    -F "user=$PUSHOVERUSER" \
+    -F "title=iTerm2" \
+    -F "message=$1" https://api.pushover.net/1/messages.json
+}
+# OPEN DIRECTORY D ISSUE
+function odkiller() {
+    sudo kill $(ps -ax | grep opendirectoryd | head -1 | awk '{print $1}')
+}
+# FOR BATTERY STATUS IN PROMPT
+function batterycharge() {
+    "$HOME/bin/batterycharge.sh"
+}
+# ADD HORIZONTAL LINE
+rule() {
+    printf -v _hr "%*s" $(tput cols) && echo ${_hr// /${1--}}
+}
+# COPY
+copy() {
+    if [[ $1 =~ ^-?[hH] ]]; then
+
+        echo "Intelligently copies command results, text file, or raw text to"
+        echo "OS X clipboard"
+        echo
+        echo "Usage: copy [command or text]"
+        echo "  or pipe a command: [command] | copy"
+        return
+    fi
+
+    local output
+    local res=false
+    local tmpfile="${TMPDIR}/copy.$RANDOM.txt"
+    local msg=""
+
+    if [[ $# == 0 ]]; then
+        output=$(cat)
+        msg="So, the input was copied to clipboard"
+        res=true
+    else
+        local cmd=""
+        for arg in $@; do
+            cmd+="\"$(echo -en $arg|sed -E 's/"/\\"/g')\" "
+        done
+        output=$(eval "$cmd" 2> /dev/null)
+        if [[ $? == 0 ]]; then
+            msg="Results of command are in the clipboard"
+            res=true
+        else
+            if [[ -f $1 ]]; then
+                output=""
+                for arg in $@; do
+                    if [[ -f $arg ]]; then
+                        type=`file "$arg"|grep -c text`
+                        if [ $type -gt 0 ]; then
+                            output+=$(cat $arg)
+                            msg+="Contents of $arg are in the clipboard.\n"
+                            res=true
+                        else
+                            msg+="File \"$arg\" is not plain text.\n"
+                        fi
+                    fi
+                done
+            else
+                output=$@
+                msg="Text copied to clipboard"
+                res=true
+            fi
+        fi
+    fi
+
+    $res && echo -ne "$output" | pbcopy -Prefer txt
+    echo -e "$msg"
+}
+
+# TO FIX HOMEBREW
+function brewfix() {
+    "$HOME/bin/brew_fix.sh"
+}
+
+# OPEN ARGUMENT IN DASH
+function dash() {
+    open "dash://$*"
+}
+
+function dman() {
+    open "dash://man:$*"
+}
+
+
+# GIT BRANCH
+function parse_git_dirty() {
+    [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo " 🔥"
+}
+function parse_git_branch() {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/📛  \1$(parse_git_dirty)/"
+}
+
+# IP ADDRESS WALRUS
+function walrus() {
+    sudo "$HOME/bin/ip_walrus.sh"
+}
+
+# DISPLAY WIRELESS NETWORK IN BASH PROMPT
+function airprompt() {
+    "$HOME/bin/airprompt.sh"
+}
+
+# ADD CURRENT FOLDER TO ~/.GITLOGGER WITH NAME SPECIFIED AS ARGUMENT 1
+# FOR USE WITH GITLOGGER.SH
+function glog() {
+    (echo "$1:`pwd`";grep -v "`pwd`$" ~/.gitlogger) | sort > ~/.gitlogger.tmp
+    mv ~/.gitlogger.tmp ~/.gitlogger
+}
+# TREE WITH A PRETTY OUTPUT
+ltree()
+{
+    tree -C $* | less -R
+}
+
+# `s` WITH NO ARGUMENTS OPENS THE CURRENT DIRECTORY IN SUBLIME TEXT, OTHERWISE
+# OPENS THE GIVEN LOCATION
+function s() {
+  if [ $# -eq 0 ]; then
+    subl .;
+  else
+    subl "$@";
+  fi;
+}
+
+# `a` WITH NO ARGUMENTS OPENS THE CURRENT DIRECTORY IN ATOM EDITOR, OTHERWISE
+# OPENS THE GIVEN LOCATION
+function a() {
+  if [ $# -eq 0 ]; then
+    atom .;
+  else
+    atom "$@";
+  fi;
+}
+
+# `v` WITH NO ARGUMENTS OPENS THE CURRENT DIRECTORY IN VIM, OTHERWISE OPENS THE
+# GIVEN LOCATION
+function v() {
+  if [ $# -eq 0 ]; then
+    vim .;
+  else
+    vim "$@";
+  fi;
+}
+
+# `o` WITH NO ARGUMENTS OPENS THE CURRENT DIRECTORY, OTHERWISE OPENS THE GIVEN
+# LOCATION
+function o() {
+  if [ $# -eq 0 ]; then
+    open .;
+  else
+    open "$@";
+  fi;
+}
+
