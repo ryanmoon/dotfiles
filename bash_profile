@@ -49,7 +49,7 @@ source ~/bin/tmuxinator.bash
 # BASH HISTORY SETTINGS #
 #=======================#
 
-export HISTFILE=~/.history/$(date +Y%m%d).hist
+export HISTFILE=~/.history/$(date +%Y%m%d).hist
 if [[ ! -e $HISTFILE ]]; then
     LASTHIST=~/.history/$(ls -tr ~/.history/ | tail -1)
     if [[ -e $LASTHIST ]]; then
