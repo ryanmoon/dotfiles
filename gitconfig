@@ -17,7 +17,7 @@
       changed = green
       untracked = cyan
 [core]
-    autocrlf = input
+	autocrlf = false
     safecrlf = true
     editor = subl -w
     excludesfile = $HOME/.gitignore
