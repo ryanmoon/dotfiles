@@ -1,6 +1,6 @@
-#========================#
-# RYAN MOON BASH_PROFILE #
-#========================#
+#==============#
+# MOON PROFILE #
+#==============#
 
 for file in ~/.{prompt,aliases,functions,moon-identities}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
