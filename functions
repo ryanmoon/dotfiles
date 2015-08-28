@@ -1,5 +1,5 @@
 # MKDIR AND CD INTO NEW DIR
-mkcd(){
+mkcd() {
   mkdir -p "$@" && cd "$_";
 }
 
@@ -147,8 +147,7 @@ function glog() {
     mv ~/.gitlogger.tmp ~/.gitlogger
 }
 # TREE WITH A PRETTY OUTPUT
-ltree()
-{
+ltree() {
     tree -C $* | less -R
 }
 
